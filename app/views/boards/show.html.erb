@@ -43,27 +43,10 @@
 
 </form>
 
+<h2>Active posts</h2>
 
-<div>
-  <div>
-    <h2>
-      Edit board
-    </h2>
+<% matching_posts = Post.where({ :board_id => @the_board.id }) %>
 
-    <form action="/modify_board/<%= @the_board.id %>"  method="post" >
-      <div>
-        <label for="name_box">
-          Name
-        </label>
+<% matching_posts.each do |a_post| %>
 
-        <input type="text" id="name_box" name="query_name" value="<%= @the_board.name %>">
-      </div>
-
-      <button>
-        Update board
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
+<% end %>
