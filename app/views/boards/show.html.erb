@@ -47,6 +47,22 @@
 
 <% matching_posts = Post.where({ :board_id => @the_board.id }) %>
 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Posted on</th>
+    <th>Expires on</th>
+  </tr>
+
 <% matching_posts.each do |a_post| %>
+  <tr>
+    <td><%= a_post.title %></td>
+    <td><%= a_post.body %></td>
+    <td><%= a_post.created_at %></td>
+    <td><%= a_post.expires_on %></td>
+  </tr>
 
 <% end %>
+
+</table>
