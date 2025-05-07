@@ -45,7 +45,7 @@
 
 <h2>Active posts</h2>
 
-<% matching_posts = Post.where({ :board_id => @the_board.id }) %>
+<% matching_posts = Post.where({ :board_id => @the_board.id }).order({ :expires_on => :asc }) %>
 
 <table>
   <tr>
